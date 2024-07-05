@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/principalFragment">
+
+    <fragment
+        android:id="@+id/principalFragment"
+        android:name="com.example.myapplication.ui.PrincipalFragment"
+        android:label="@string/vitaclinic"
+        tools:layout="@layout/fragment_principal" />
+
+    <fragment
+        android:id="@+id/misCitasFragment"
+        android:name="com.example.myapplication.ui.MisCitasFragment"
+        android:label="@string/vitaclinic"
+        tools:layout="@layout/fragment_mis_citas" />
+    <fragment
+        android:id="@+id/registrarCitaFragment"
+        android:name="com.example.myapplication.ui.RegistrarCitaFragment"
+        android:label="@string/vitaclinic"
+        tools:layout="@layout/fragment_registrar_cita" >
+        <action
+            android:id="@+id/action_registrarCitaFragment_to_doctoresDisponiblesFragment"
+            app:destination="@id/doctoresDisponiblesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doctoresDisponiblesFragment"
+        android:name="com.example.myapplication.ui.DoctoresDisponiblesFragment"
+        android:label="Doctores disponibles"
+        tools:layout="@layout/fragment_doctores_disponibles" >
+        <argument
+            android:name="specialityToSearch"
+            app:argType="string"
+            />
+        <argument
+            android:name="dateToSearch"
+            app:argType="string"
+            />
+    </fragment>
+</navigation>
